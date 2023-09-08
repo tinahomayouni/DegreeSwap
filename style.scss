@@ -1,0 +1,20 @@
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    > div{
+        display: flex;
+        flex-direction: row;
+        > div{
+            padding: 20px;
+            margin: 20px;
+            background: #002;
+            height: 400px;
+            width: 200px;
+            color: aliceblue;
+        }
+    }
+}
