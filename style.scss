@@ -1,3 +1,4 @@
+
 section {
     display: flex;
     flex-direction: column;
@@ -5,6 +6,9 @@ section {
     align-items: center;
     height: 100vh;
     width: 100%;
+    p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
     > div{
         display: flex;
         flex-direction: row;
@@ -13,8 +17,22 @@ section {
             margin: 20px;
             background: #002;
             height: 400px;
-            width: 200px;
+            width: 250px;
             color: aliceblue;
+
+        }
+        table{
+            
+                color: #000;
+                border-collapse: collapse;
+                border: 0;
+            tr{
+                background: #fff;
+                    border-bottom: 1px solid #000022;
+                td{
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                }
+            }
         }
     }
 }

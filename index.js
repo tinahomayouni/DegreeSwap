@@ -15,16 +15,24 @@ function filterDuplicates() {
   farenheight = [...new Set(farenheight)];
 }
 const fahrenheitToCelsius = () => {
-  let convertedDeg = farenheight.map((farenheightItem) => {
-    return ((5 * (farenheightItem - 32)) / 9).toFixed(2);
+  let temperaturePairs = farenheight.map((farenheightItem) => {
+    const celsiusValue = ((5 * (farenheightItem - 32)) / 9).toFixed(2);
+    return { fahrenheit: farenheightItem, celsius: celsiusValue };
   });
-  const convertedTemperaturesString = convertedDeg
+
+  const temperatureTableRows = temperaturePairs
     .map(
       (item) =>
-        `<table><tr><td>the temps are :</td><td>${item}</td></tr></table>`
+        `<tr><td>Fahrenheit:</td><td>${
+          item.fahrenheit
+        }</td><td>Celsius:</td><td>${
+          item.celsius > 0 ? item.celsius + "HOT" : item.celsius + "COLD"
+        }°C</td></tr>`
     )
-    .join("<br>");
-  centigrad.innerHTML = convertedTemperaturesString;
+    .join("");
+
+  const tableHTML = `<table>${temperatureTableRows}</table>`;
+  centigrad.innerHTML = tableHTML;
 };
 
 window.addEventListener("load", () => {
