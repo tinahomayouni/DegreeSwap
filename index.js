@@ -1,6 +1,8 @@
 let farenheight = [];
 let forenheightList = document.getElementById("forenheightList");
 let centigrad = document.getElementById("centigrad");
+let cold = '<i class="fa fa-bolt" aria-hidden="true"></i>';
+let hot = '<i class="fa fa-sun" aria-hidden="true"></i>';
 function addTemp() {
   let forenheightItem =
     '<div id="forenheightItem"><input  class="item" type="text">  </div>';
@@ -26,7 +28,9 @@ const fahrenheitToCelsius = () => {
         `<tr><td>Fahrenheit:</td><td>${
           item.fahrenheit
         }</td><td>Celsius:</td><td>${
-          item.celsius > 0 ? item.celsius + "HOT" : item.celsius + "COLD"
+          item.celsius > 0
+            ? item.celsius + " " + hot
+            : item.celsius + " " + cold
         }°C</td></tr>`
     )
     .join("");
