@@ -9,13 +9,14 @@ function addTemp() {
 
   if (forenheightList && forenheightItem) {
     forenheightList.insertAdjacentHTML("beforeend", forenheightItem);
+
     addListener();
   }
 }
-
 function filterDuplicates() {
   farenheight = [...new Set(farenheight)];
 }
+
 const fahrenheitToCelsius = () => {
   let temperaturePairs = farenheight.map((farenheightItem) => {
     const celsiusValue = ((5 * (farenheightItem - 32)) / 9).toFixed(2);
@@ -42,9 +43,11 @@ const fahrenheitToCelsius = () => {
 window.addEventListener("load", () => {
   addListener();
 });
+
 function result() {
   fahrenheitToCelsius();
 }
+
 function addListener() {
   let temperatureInputs = document.querySelectorAll(".item");
   temperatureInputs.forEach((temperature) => {
